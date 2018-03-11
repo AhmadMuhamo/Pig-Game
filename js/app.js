@@ -11,6 +11,7 @@ GAME RULES:
 
 var scores, roundScore, activePlayer, gameScore, gamePlaying;
 var diceDOM = document.querySelector('.dice');
+var dice2DOM = document.querySelector('.dice2');
 
 initializeGame();
 
@@ -18,15 +19,18 @@ initializeGame();
 document.querySelector('.btn-roll').addEventListener('click', () => {
     if(gamePlaying) {
         // 1- Generate Random Number
-        var dice = Math.floor(Math.random() * 6) + 1;
+        var dice = getRandomNumber();
+        var dice2 = getRandomNumber();
 
         // 2- Display the result
         diceDOM.style.display = 'block';
         diceDOM.src = './images/dice-' + dice + '.png';
+        dice2DOM.style.display = 'block';
+        dice2DOM.src = './images/dice-' + dice2 + '.png';
 
         // 3- Update round score if dice is not 1
-        if(dice !== 1)    {
-            roundScore += dice;
+        if(dice !== 1 && dice2 !== 1)    {
+            roundScore += (dice + dice2);
             document.getElementById('current-' + activePlayer).textContent = roundScore;
         } else  {
             changePlayer();
@@ -53,6 +57,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
             // Next Player
             changePlayer();
             diceDOM.style.display = 'none';
+            dice2DOM.style.display = 'none';
         }
     }
 });
@@ -91,4 +96,9 @@ function initializeGame()   {
     document.querySelector('.player-0-panel').classList.add('active');
     
     diceDOM.style.display = 'none';
+    dice2DOM.style.display = 'none';
+}
+
+function getRandomNumber()  {
+    return Math.floor(Math.random() * 6) + 1;
 }
