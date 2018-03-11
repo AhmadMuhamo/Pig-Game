@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <h1 class="game-score"></h1>
         <div class="wrapper clearfix">
             <div class="player-0-panel active">
                 <div class="player-name" id="name-0">Player 1</div>
@@ -37,14 +38,23 @@
             <img src="./images/dice-6.png" alt="Dice 2" class="dice2">
             
         </div>
+        <button class="btn-settings"><i class="ion-ios-gear"></i></button>
+        <div class="game-settings clearfix">
+            <h1>Game Settings</h1>
+            </br>
+            <input type="number" id="game-score" placeholder="Game Score" step="10" min="10" value="100"/>
+            <input id="player-0-name" placeholder="Player 1 Name" value="Player 1"/>
+            <input id="player-1-name" placeholder="Player 2 Name" value="Player 2"/>
+            <p class="settings-buttons"><span id="btn-done">Done</span><span id="btn-rules">Show Rules</span></p>
+        </div>
         <div class="wrapper clearfix rules">
             <h1>GAME RULES</h1>
-        </br>
+            </br>
             <p>The game has 2 players, playing in rounds</p>
-            <p>In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score</p>
+            <p>In each turn, a player rolls two dices as many times as he whishes. Each result get added to his ROUND score</p>
             <p>BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn</p>
             <p>The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn</p>
-            <p>The first player to reach 100 points on GLOBAL score wins the game</p>
+            <p>The first player to reach 100 points or whichever score has been set in settings on GLOBAL score wins the game</p>
             <p class="rules-confirm">Got it!</p>
         </div>
         <script src="./js/app.js"></script>

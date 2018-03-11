@@ -64,6 +64,15 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
 
 document.querySelector('.btn-new').addEventListener('click', initializeGame);
 document.querySelector('.rules-confirm').addEventListener('click', () => document.querySelector('.rules').style.display = 'none');
+document.querySelector('#btn-rules').addEventListener('click', () => document.querySelector('.rules').style.display = 'block');
+document.querySelector('.btn-settings').addEventListener('click', () => document.querySelector('.game-settings').style.display = 'block');
+document.querySelector('#btn-done').addEventListener('click', () => {
+    document.querySelector('.game-settings').style.display = 'none';
+    document.getElementById('name-0').textContent = document.getElementById('player-0-name').value;
+    document.getElementById('name-1').textContent = document.getElementById('player-1-name').value;
+    gameScore = document.getElementById('game-score').value;
+    document.querySelector('.game-score').textContent = 'Game Score: ' + gameScore;
+});
 
 function changePlayer() {
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -94,6 +103,7 @@ function initializeGame()   {
     document.querySelector('.player-0-panel').classList.remove('winner');
     document.querySelector('.player-1-panel').classList.remove('winner');
     document.querySelector('.player-0-panel').classList.add('active');
+    document.querySelector('.game-score').textContent = 'Game Score: ' + gameScore;
     
     diceDOM.style.display = 'none';
     dice2DOM.style.display = 'none';
