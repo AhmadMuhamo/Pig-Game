@@ -27,6 +27,19 @@ body {
 .rules {
     text-align: center;
     color: black;
+    font-weight: bold;
+    padding: 170px 0;
+    opacity: 0.9;
+    background: darkgray;
+}
+.rules p {
+    font-style: oblique;
+}
+.rules-confirm {
+    margin: 25px 0;
+    font-size:150%;
+    cursor: pointer;
+    color: darkred;
 }
 .wrapper {
     width: 1000px;
