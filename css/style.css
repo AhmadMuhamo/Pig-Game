@@ -31,8 +31,9 @@ body {
     padding: 170px 0;
     opacity: 0.9;
     background: darkgray;
+    line-height: 25px;
 }
-.rules p {
+.rules h1 {
     font-style: oblique;
 }
 .rules-confirm {
@@ -40,6 +41,9 @@ body {
     font-size:150%;
     cursor: pointer;
     color: darkred;
+}
+.rules-confirm:hover {
+font-style: oblique;
 }
 .wrapper {
     width: 1000px;

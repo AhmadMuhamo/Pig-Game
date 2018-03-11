@@ -68,9 +68,21 @@ document.querySelector('#btn-rules').addEventListener('click', () => document.qu
 document.querySelector('.btn-settings').addEventListener('click', () => document.querySelector('.game-settings').style.display = 'block');
 document.querySelector('#btn-done').addEventListener('click', () => {
     document.querySelector('.game-settings').style.display = 'none';
-    document.getElementById('name-0').textContent = document.getElementById('player-0-name').value;
-    document.getElementById('name-1').textContent = document.getElementById('player-1-name').value;
-    gameScore = document.getElementById('game-score').value;
+    if(document.getElementById('player-0-name').value !='')    {
+        document.getElementById('name-0').textContent = document.getElementById('player-0-name').value;
+    } else{
+        document.getElementById('name-0').textContent = 'Player 1';
+    }
+    if(document.getElementById('player-1-name').value !='')    {
+        document.getElementById('name-1').textContent = document.getElementById('player-1-name').value;
+    } else{
+        document.getElementById('name-1').textContent = 'Player 1';
+    }
+    if(document.getElementById('game-score').value == '')   {
+        gameScore = 100;
+    }else{
+        gameScore = document.getElementById('game-score').value;
+    }
     document.querySelector('.game-score').textContent = 'Game Score: ' + gameScore;
 });
 
